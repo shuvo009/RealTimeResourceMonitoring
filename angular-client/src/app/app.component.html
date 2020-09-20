@@ -1,0 +1,26 @@
+<div class="container-fluid">
+  <div class="row mt-5">
+    <div class="col">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Resource Service One</h5>
+          <p class="card-text">CPU : {{resourceOne.cpu}}</p>
+          <p class="card-text">RAM : {{resourceOne.ram}}</p>
+          <a href="#" (click)="startMonitor('ResourceServiceOne')" class="card-link">Start</a>
+          <a href="#" (click)="stopMonitor('ResourceServiceOne')" class="card-link">Stop</a>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Resource Service Two</h5>
+          <p class="card-text">CPU : {{resourceTwo.cpu}}</p>
+          <p class="card-text">RAM : {{resourceTwo.ram}}</p>
+          <a href="#" (click)="startMonitor('ResourceServiceTwo')" class="card-link">Start</a>
+          <a href="#" (click)="stopMonitor('ResourceServiceTwo')" class="card-link">Stop</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
