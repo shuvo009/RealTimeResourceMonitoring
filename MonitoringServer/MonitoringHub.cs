@@ -21,8 +21,8 @@ namespace MonitoringServer
 
         public async Task Unsubscribe(string resource)
         {
-            await Groups.AddToGroupAsync(Context.ConnectionId, resource);
-            _monitoringServiceManager.Remove(Context.ConnectionId);
+            await Groups.RemoveFromGroupAsync(Context.ConnectionId, resource);
+            _monitoringServiceManager.Remove(resource, Context.ConnectionId);
         }
 
         public override Task OnDisconnectedAsync(Exception exception)

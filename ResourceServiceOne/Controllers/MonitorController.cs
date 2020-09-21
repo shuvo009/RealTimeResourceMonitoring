@@ -11,8 +11,8 @@ namespace ResourceServiceOne.Controllers
         {
             var info = new
             {
-                Cpu = new Random().Next(10, 100) + "Service One",
-                Ram = new Random().Next(30, 100) + "Service One",
+                Cpu = new Random().Next(10, 100) + " Service One",
+                Ram = new Random().Next(30, 100) + " Service One",
             }; 
             return Ok(info);
         }

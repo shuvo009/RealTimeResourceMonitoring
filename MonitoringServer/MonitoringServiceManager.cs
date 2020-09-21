@@ -37,6 +37,19 @@ namespace MonitoringServer
             });
         }
 
+        public void Remove(string resource, string connectionId)
+        {
+            var index = _services.FindIndex(x =>
+                x.MonitoringService.Name == resource && x.ConnectionIds.Any(s => s == connectionId));
+            if (index < 0)
+                return;
+
+            _services[index].ConnectionIds.Remove(connectionId);
+
+            if (_services[index].ConnectionIds.Count < 1)
+                _services.RemoveAt(index);
+        }
+
         public void Remove(string connectionId)
         {
             foreach (var serviceMap in _services.Where(x => x.ConnectionIds.Any(s => s == connectionId)))
@@ -50,8 +63,8 @@ namespace MonitoringServer
 
         public List<IMonitoringService> GetMonitoringServices(DateTime dateTime)
         {
-            var services =  _services.Where(x => x.DateTime <= dateTime).Select(x => x.MonitoringService).ToList();
-            Console.WriteLine("Service Found : "+ services.Count);
+            var services = _services.Where(x => x.DateTime <= dateTime).Select(x => x.MonitoringService).ToList();
+            Console.WriteLine("Service Found : " + services.Count);
             return services;
         }
 

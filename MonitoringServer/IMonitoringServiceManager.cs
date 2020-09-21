@@ -8,6 +8,7 @@ namespace MonitoringServer
     {
         void Add(string resource, string connectionId);
         void Remove(string connectionId);
+        void Remove(string resource, string connectionId);
         List<IMonitoringService> GetMonitoringServices(DateTime dateTime);
         void UpdateGetNextOccurrence(string name);
     }
