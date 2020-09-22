@@ -5,3 +5,7 @@ A prototype for on-demand real time monitoring system using SignalR, Asp.net Cor
 * [SignalR](https://dotnet.microsoft.com/apps/aspnet/signalr)
 * [Angular](https://angular.io/)
 
+## Work Flow
+![Work Flow](https://github.com/shuvo009/RealTimeResourceMonitoring/blob/master/WorkFlow.png)
+
+Enjoy!! :blush:
